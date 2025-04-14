@@ -15,6 +15,7 @@ if(!defined("PROCESSWIRE")) die();
  */
 
 /** @var Scss $scss */
+/*
 $scss = $this->wire->modules->get('Scss');
 
 // watch all files in /site/templates/scss
@@ -35,3 +36,4 @@ $scss->compileIfChanged(
   output: $config->paths->templates . "styles/main.css",
   style: 'compressed',
 );
+*/
