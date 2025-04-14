@@ -26,20 +26,20 @@ $home = $pages->get('/'); /** @var HomePage $home */
 	    <a class="skip-link" href="#main-content">Zum Hauptinhalt springen</a>
 	    
 	    <header role="banner">
-	        <div class="container">
+	        <div class="wrapper">
 			<h1><?= $page->title; ?></h1>
 			<p>page subtitle</p>
 	        </div>
 	    </header>
 	
 	    <nav id="main-nav" role="navigation" aria-label="Hauptnavigation">
-	        <div class="container">
+	        <div class="wrapper">
 	            <!-- templatepart navigation -->
 	        </div>
 	    </nav>
 	
 	    <main id="main-content" role="main">
-	        <div class="container">
+	        <div class="wrapper">
 	            <article id="content">
 	                <h2><?= $page->title; ?></h2>
 	                <?= $body->body; ?>
@@ -48,13 +48,13 @@ $home = $pages->get('/'); /** @var HomePage $home */
 	    </main>
 	
 	    <aside role="complementary">
-	        <div class="container">
+	        <div class="wrapper">
 	            
 	        </div>
 	    </aside>
 	
 	    <footer role="contentinfo">
-	        <div class="container">
+	        <div class="wrapper">
 	            
 	        </div>
 	    </footer>
