@@ -11,5 +11,6 @@
 ?>
 
 <div id="content">
-	Basic page content 
+	<h2><?= $page->title; ?></h2>
+	<?= $page->body; ?>
 </div>	
