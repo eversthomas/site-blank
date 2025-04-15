@@ -98,8 +98,7 @@ $home = $pages->get('/'); /** @var HomePage $home */
 	    <main id="main-content" role="main">
 	        <div class="wrapper">
 	            <article id="content">
-	                <h2><?= $page->title; ?></h2>
-	                <?= $body->body; ?>
+	                
 	            </article>
 	        </div>
 	    </main>
