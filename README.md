@@ -1,6 +1,8 @@
-# site-blank
+# seo-blank
 
-basic blank template processwire
+basic blank template for processwire
+
+optimzed for SEO
 
 ## needed / usefull modules
 
