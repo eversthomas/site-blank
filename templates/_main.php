@@ -14,107 +14,175 @@
 	
 $home = $pages->get('/'); /** @var HomePage $home */
 
-?><!DOCTYPE html>
-<html lang="de">
-	<head id="html-head">
-	    <!-- Grundlegende Meta-Tags -->
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	    
-	    <!-- SEO Meta-Tags -->
-	    <title><?php echo $page->title; ?></title>
-	    <meta name="description" content="Eine präzise Beschreibung der Seite in 150-160 Zeichen">
-	    <meta name="author" content="Dein Name/Firmenname">
-	    <meta name="robots" content="index, follow">
-	    <link rel="canonical" href="https://www.deinewebsite.de/aktuelle-url/">
-	    
-	    <!-- Open Graph Tags für Social Media -->
-	    <meta property="og:type" content="website">
-	    <meta property="og:url" content="https://www.deinewebsite.de/aktuelle-url/">
-	    <meta property="og:title" content="Seitentitel | Websitename">
-	    <meta property="og:description" content="Eine präzise Beschreibung für Social Media">
-	    <meta property="og:image" content="https://www.deinewebsite.de/images/og-image.jpg">
-	    <meta property="og:image:width" content="1200">
-	    <meta property="og:image:height" content="630">
-	    
-	    <!-- Twitter Card Tags -->
-	    <meta name="twitter:card" content="summary_large_image">
-	    <meta name="twitter:title" content="Seitentitel | Websitename">
-	    <meta name="twitter:description" content="Eine präzise Beschreibung für Twitter">
-	    <meta name="twitter:image" content="https://www.deinewebsite.de/images/twitter-image.jpg">
-	    
-	    <!-- Favicons und App Icons -->
-	    <link rel="icon" href="/favicon.ico" sizes="any">
-	    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-	    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-	    <link rel="manifest" href="/site.webmanifest">
-	    <meta name="theme-color" content="#ffffff">
-	    
-	    <!-- Preloading für kritische Ressourcen -->
-	    <link rel="preload" href="/fonts/main-font.woff2" as="font" type="font/woff2" crossorigin>
-	    
-	    <!-- CSS Einbindung -->
-	    <link rel="stylesheet" type="text/css" href="<?php echo $config->urls->templates; ?>styles/main.css" />
-	    
-	    <!-- Unterstützung für ältere Browser -->
-	    <!--[if lt IE 9]>
+?><!doctype html>
+<html lang="de" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+
+    <title><?php echo $page->title; ?></title>
+    <meta name="description" content="Kurzer, prägnanter Beschreibungstext dieser Seite (max. ~155 Zeichen).">
+    <link rel="canonical" href="https://www.beispiel.de/aktueller-pfad/">
+
+    <!-- Social Previews -->
+    <meta property="og:site_name" content="Markenname">
+    <meta property="og:title" content="<?php echo $page->title; ?>">
+    <meta property="og:description" content="Kurzer, prägnanter Beschreibungstext dieser Seite.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.beispiel.de/aktueller-pfad/">
+    <meta property="og:image" content="https://www.beispiel.de/assets/og/og-bild.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<?php echo $page->title; ?>">
+    <meta name="twitter:description" content="Kurzer, prägnanter Beschreibungstext dieser Seite.">
+    <meta name="twitter:image" content="https://www.beispiel.de/assets/og/og-bild.jpg">
+
+    <!-- Favicons/Manifest (Platzhalter) -->
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Strukturierte Daten: WebSite (nur dieser Block) -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Markenname",
+            "url": "https://www.beispiel.de/",
+            "inLanguage": "de-DE",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://www.beispiel.de/suche?q={suchbegriff}",
+                "query-input": "required name=suchbegriff"
+            }
+        }
+    </script>
+
+    <!-- Externe Styles (du befüllst sie) -->
+    <link rel="stylesheet" type="text/css" href="<?php echo $config->urls->templates; ?>styles/main.css" />
+
+    <!-- Unterstützung für ältere Browser -->
+    <!--[if lt IE 9]>
 	        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
 	    <![endif]-->
-	    
-	    <!-- Schema.org Strukturierte Daten -->
-	    <script type="application/ld+json">
-	    {
-	      "@context": "https://schema.org",
-	      "@type": "WebPage",
-	      "name": "Seitentitel",
-	      "description": "Eine präzise Beschreibung der Seite",
-	      "publisher": {
-	        "@type": "Organization",
-	        "name": "Dein Firmenname",
-	        "logo": {
-	          "@type": "ImageObject",
-	          "url": "https://www.deinewebsite.de/logo.png"
-	        }
-	      }
-	    }
-	    </script>
-	</head>
-	<body id="html-body">
-	    <a class="skip-link" href="#main-content">Zum Hauptinhalt springen</a>
-	    
-	    <header role="banner">
-	        <div class="wrapper">
-			<h1><?= $page->title; ?></h1>
-			<p>page subtitle</p>
-	        </div>
-	    </header>
-	
-	    <nav id="main-nav" role="navigation" aria-label="Hauptnavigation">
-	        <div class="wrapper">
-	            <!-- templatepart navigation -->
-	        </div>
-	    </nav>
-	
-	    <main id="main-content" role="main">
-	        <div class="wrapper">
-	            <article id="content">
-	                
-	            </article>
-	        </div>
-	    </main>
-	
-	    <aside role="complementary">
-	        <div class="wrapper">
-	            
-	        </div>
-	    </aside>
-	
-	    <footer role="contentinfo">
-	        <div class="wrapper">
-	            
-	        </div>
-	    </footer>
-	<!-- javascript -->
-	<script src="<?php echo $config->urls->templates; ?>scripts/main.js"></script>
-	</body>
+
+    <!-- <meta name="robots" content="noindex,nofollow"> für Staging -->
+</head>
+
+<body data-entity="page">
+
+    <!-- Skip-Link -->
+    <a href="#main" class="skip-link">Zum Inhalt springen</a>
+
+    <header role="banner" id="seitenkopf" data-section="header">
+        <div class="brand">
+            <a href="/" rel="home">Markenname</a>
+        </div>
+        <!-- Header bleibt schlank; Hauptnavigation folgt separat -->
+    </header>
+
+    <!-- Hauptnavigation separat (leichter zu stylen) -->
+    <nav aria-label="Hauptnavigation" id="hauptnavigation" data-section="primary-nav">
+        <ul>
+            <li><a href="/start" aria-current="page">Start</a></li>
+            <li><a href="/leistungen">Leistungen</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/kontakt">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <!-- Optional: Brotkrumen (nur anzeigen, wenn vorhanden) -->
+    <nav aria-label="Brotkrumen" id="breadcrumbs" hidden>
+        <ol>
+            <li><a href="/">Startseite</a></li>
+            <li><a href="/kategorie/">Kategorie</a></li>
+            <li aria-current="page">Seitentitel</li>
+        </ol>
+    </nav>
+
+    <main id="main" data-section="main">
+        <article typeof="Article" id="inhalt" data-entity="article">
+            <header>
+                <h1>Seitentitel der Seite oder des Artikels</h1>
+                <p>
+                    <time datetime="2025-08-25">25. August 2025</time>
+                    · <span class="author">Von Vorname Nachname</span>
+                </p>
+                <p class="summary">Ein kurzer Einleitungssatz, der den Inhalt klar zusammenfasst.</p>
+            </header>
+
+            <figure>
+                <img
+                    src="/assets/bilder/beispiel.webp"
+                    alt="Kurze, sinnvolle Bildbeschreibung"
+                    width="1200" height="675"
+                    loading="lazy" decoding="async">
+                <figcaption>Kurze Bildunterschrift mit Mehrwert.</figcaption>
+            </figure>
+
+            <section aria-labelledby="abschnitt-1" data-section="content-block">
+                <h2 id="abschnitt-1">Abschnittsüberschrift 1</h2>
+                <p>Kurzer Beispieltext. Hier steht der erste inhaltliche Abschnitt mit klarer Sprache.</p>
+            </section>
+
+            <section aria-labelledby="abschnitt-2" data-section="content-block">
+                <h2 id="abschnitt-2">Abschnittsüberschrift 2</h2>
+                <p>Kurzer Beispieltext. Weitere Details, Aufzählungen und Links mit sprechenden Linktexten.</p>
+                <ul>
+                    <li>Stichpunkt mit klarer Aussage</li>
+                    <li>Noch ein Punkt mit Mehrwert</li>
+                </ul>
+            </section>
+
+            <aside aria-label="Zusatzinformationen">
+                <h2>Hinweise & verwandte Inhalte</h2>
+                <p>Kurzer Hinweistext oder Teaser zu verwandten Themen.</p>
+            </aside>
+
+            <footer>
+                <p>Zuletzt aktualisiert am <time datetime="2025-08-25">25. August 2025</time>.</p>
+                <nav aria-label="Seiten">
+                    <ul>
+                        <li><a rel="prev" href="/kategorie/vorherige-seite/">Vorherige</a></li>
+                        <li><a rel="next" href="/kategorie/naechste-seite/">Nächste</a></li>
+                    </ul>
+                </nav>
+            </footer>
+        </article>
+    </main>
+
+    <footer id="seitenfuss" data-section="footer">
+        <section aria-labelledby="kontakt">
+            <h2 id="kontakt">Kontakt</h2>
+            <address>
+                Organisationsname · Musterstraße 1 · 12345 Musterstadt<br>
+                <a href="tel:+491234567890">+49 123 4567890</a> ·
+                <a href="mailto:info@beispiel.de">info@beispiel.de</a>
+            </address>
+        </section>
+
+        <nav aria-label="Footer-Navigation">
+            <ul>
+                <li><a href="/impressum">Impressum</a></li>
+                <li><a href="/datenschutz">Datenschutz</a></li>
+                <li><a href="/barrierefreiheit">Erklärung zur Barrierefreiheit</a></li>
+                <li><a href="/sitemap">Sitemap</a></li>
+            </ul>
+        </nav>
+
+        <p><small>&copy; <span id="jahr">2025</span> Markenname. Alle Rechte vorbehalten.</small></p>
+    </footer>
+
+    <!-- Platzhalter für Consent/Analytics – erst nach Einwilligung laden -->
+    <!-- <script src="/assets/js/analytics.js" type="module" defer data-consent="analytics"></script> -->
+
+    <!-- Deine JS-Datei -->
+    <script src="<?php echo $config->urls->templates; ?>scripts/main.js"></script>
+    <script>
+        // Mini-Helper: Jahr aktualisieren (PE-Fallback: statischer Wert im Markup)
+        document.getElementById('jahr').textContent = new Date().getFullYear();
+    </script>
+</body>
+
 </html>
