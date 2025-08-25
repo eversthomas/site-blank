@@ -10,7 +10,21 @@
 
 ?>
 
-<div id="content">
-	<h2><?= $page->title; ?></h2>
-	<?= $page->body; ?>
+<div pw-id="header-home">
+	header der Startseite
+</div>
+
+<div pw-id="main">
+	<header>
+		<h2><?= $page->title; ?></h2>
+		<p class="summary">Ein kurzer Einleitungssatz, der den Inhalt klar zusammenfasst.</p>
+	</header>
+
+	<section aria-labelledby="abschnitt-1" data-section="content-block">
+		<?= $page->body; ?>
+	</section>
+
+	<footer>
+		<p>Zuletzt aktualisiert am <time datetime="2025-08-25">25. August 2025</time>.</p>
+	</footer>
 </div>	
