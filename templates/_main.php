@@ -75,7 +75,7 @@ $home = $pages->get('/'); /** @var HomePage $home */
     <!-- Skip-Link -->
     <a href="#main" class="skip-link">Zum Inhalt springen</a>
 
-    <header role="banner" id="seitenkopf" data-section="header">
+    <header pw-id="header-home" role="banner" id="seitenkopf" data-section="header">
         <div class="brand">
             <a href="/" rel="home">Markenname</a>
         </div>
@@ -102,53 +102,8 @@ $home = $pages->get('/'); /** @var HomePage $home */
     </nav>
 
     <main id="main" data-section="main">
-        <article typeof="Article" id="inhalt" data-entity="article">
-            <header>
-                <h1>Seitentitel der Seite oder des Artikels</h1>
-                <p>
-                    <time datetime="2025-08-25">25. August 2025</time>
-                    · <span class="author">Von Vorname Nachname</span>
-                </p>
-                <p class="summary">Ein kurzer Einleitungssatz, der den Inhalt klar zusammenfasst.</p>
-            </header>
+        <article pw-id="main" typeof="Article" id="inhalt" data-entity="article">
 
-            <figure>
-                <img
-                    src="/assets/bilder/beispiel.webp"
-                    alt="Kurze, sinnvolle Bildbeschreibung"
-                    width="1200" height="675"
-                    loading="lazy" decoding="async">
-                <figcaption>Kurze Bildunterschrift mit Mehrwert.</figcaption>
-            </figure>
-
-            <section aria-labelledby="abschnitt-1" data-section="content-block">
-                <h2 id="abschnitt-1">Abschnittsüberschrift 1</h2>
-                <p>Kurzer Beispieltext. Hier steht der erste inhaltliche Abschnitt mit klarer Sprache.</p>
-            </section>
-
-            <section aria-labelledby="abschnitt-2" data-section="content-block">
-                <h2 id="abschnitt-2">Abschnittsüberschrift 2</h2>
-                <p>Kurzer Beispieltext. Weitere Details, Aufzählungen und Links mit sprechenden Linktexten.</p>
-                <ul>
-                    <li>Stichpunkt mit klarer Aussage</li>
-                    <li>Noch ein Punkt mit Mehrwert</li>
-                </ul>
-            </section>
-
-            <aside aria-label="Zusatzinformationen">
-                <h2>Hinweise & verwandte Inhalte</h2>
-                <p>Kurzer Hinweistext oder Teaser zu verwandten Themen.</p>
-            </aside>
-
-            <footer>
-                <p>Zuletzt aktualisiert am <time datetime="2025-08-25">25. August 2025</time>.</p>
-                <nav aria-label="Seiten">
-                    <ul>
-                        <li><a rel="prev" href="/kategorie/vorherige-seite/">Vorherige</a></li>
-                        <li><a rel="next" href="/kategorie/naechste-seite/">Nächste</a></li>
-                    </ul>
-                </nav>
-            </footer>
         </article>
     </main>
 
